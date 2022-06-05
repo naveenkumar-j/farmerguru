@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/css/bootstrap.min.css"
+        integrity="sha384-VCmXjywReHh4PwowAiWNagnWcLhlEJLA5buUprzK8rxFgeH0kww/aWY76TfkUoSX" crossorigin="anonymous">
+    <title>TOMATO LEAF DISEASE PREDICTION</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+
+        .border img {
+            border-radius: 15px;
+            border: 2px solid black;
+        }
+</style>
+</head>
+<body>
+<!--style css import-->
+<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/style.css') }}">
+<!--style css import-->
+<!--Start imports-->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+        <script src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js"></script>
+        <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="./static/mywebscript.js"></script>
+        <script src="./static/js/main.js"></script>
+         <!--End imports-->
+
+ <!--Start Navigation bar-->
+    <div class="navbar">
+        <a href="{{ url_for('view_about_page')}}"><i class="fa fa-align-justify"></i> About project</a>
+        <a class="active" href="#"><i  class="fa fa-code"> </i>Live Demo</a>
+        <a href="https://github.com/naveenkumar-j/tomato-leaf-disease-prediction-website" target="_blank" ><i class="fa fa-address-card"></i>Source code</a>
+      </div>
+ <!--End Navigation bar-->
+<div>
+    <h1 style="text-align:center;font-size:4rem;color:#3CB371">Predict Tomato Leaf Disease & Get Cure</h1>
+    </div><br><br>
+<div class="container my-2">
+    <div class="row mb-5">
+        <div class="col-sm" style="margin-bottom: 23px;">
+            <span class="border border-primary">
+                <img src="{{url_for('static',filename = 'images/Tomato___Septoria_leaf_spot.JPG' )}}" alt="User Image" style="width:500px;height:500px;">
+            </span>
+            </div>
+        <div class="col-sm">
+            <div>
+                <h1 style="padding: 15px; background-color: rgb(60,179,113); color: white;"
+                        class="text-center mb-5 content-h1 rounded">
+                        {{pred_output}} </h1>
+                </div>
+            <div class="details">
+                <h4><b style="color:#3CB371"> Treatment : </b> </h4>
+                    <h6>
+					<b>Removing infected leaves: </b> Remove infected leaves immediately, and be sure to wash your hands and pruners thoroughly before working with uninfected plants.
+					<br><b>Consider organic fungicide options:</b> Fungicides containing either copper or potassium bicarbonate will help prevent the spreading of the disease. Begin spraying as soon as the first symptoms appear and follow the label directions for continued management.<br>
+<b>Consider chemical fungicides:</b> While chemical options are not ideal, they may be the only option for controlling advanced infections. One of the least toxic and most effective is chlorothalonil (sold under the names Fungonil and Daconil).<br>
+					<br>
+                    </h6>
+                </div>
+            </div>
+        </div>
+</div>
+<!-- Start Footer -->
+<footer class="text-center text-lg-start bg-light text-muted">
+    <!-- Section: Links  -->
+  <section class="">
+    <div class="container text-center text-md-start mt-5">
+      <!-- Grid row -->
+      <div class="row mt-3">
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+          <!-- Content -->
+          <h6 class="text-uppercase fw-bold mb-4"><br>
+            <i class="fas fa-gem me-3"></i>Motivation behind this project
+          </h6>
+          <p>Tomato Plant diseases are the common reason for low yield and reduced income to
+the farmers. Currently,researchers are trying their best to find a mechanism that
+automatically detects the tomato leaf diseases.Accurate identification of tomato
+leaf diseases may help in finding a remedy at the earliest to control the
+loss. Our project attempts to develop a novel approach by using machine learning
+techniques to predict the tomato leaf diseases.</p>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold mb-4"><br>
+            Authors profile
+          </h6>
+
+         <p>
+            <a href="https://research.vit.ac.in/researcher/sujatha-r" target="_blank" class="text-reset">Dr.Sujatha R</a>
+          </p>
+          <p>
+            <a href="https://naveenkumarj.netlify.app/" target="_blank" class="text-reset">Naveenkumar J</a>
+          </p>
+          <p>
+            <a href="https://harishd.netlify.app/" target="_blank" class="text-reset">Harish D</a>
+          </p>
+
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold mb-4"><br>
+            USEFUL LINKS
+          </h6>
+          <p>
+            <a href="{{ url_for('home')}}" class="text-reset">Home</a>
+          </p>
+          <p>
+            <a href="{{ url_for('home')}}" class="text-reset">About project</a>
+          </p>
+          <p>
+            <a href="https://github.com/naveenkumar-j/tomato-leaf-disease-prediction-website" class="text-reset">Source code</a>
+          </p>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold mb-4"><br>
+            Contact US
+          </h6>
+          <p><i class="fa fa-map-marker"></i>VIT University, Vellore Campus</p>
+          <p>
+            <i class="fa fa-envelope-o"></i>
+            naveenkumar.j395@gmail.com
+          </p>
+        </div>
+        <!-- Grid column -->
+      </div>
+      <!-- Grid row -->
+    </div>
+  </section>
+  <!-- Section: Links  -->
+
+  <!-- Start Copyright -->
+  <div class="text-center p-4" style="background-color:#04AA6D">
+    <p style="color:white">© 2021 Copyright:<a href="https://naveenkumarj.netlify.app/"  target="_blank" style="color:white">Naveen</a></p>
+      <!-- Section: Social media -->
+        <section class="mb-4">
+            <!-- Instagram -->
+          <a class="btn btn-link btn-floating btn-lg text-dark m-1"
+             href="https://www.instagram.com/eagle_programming/" target="_blank"
+             role="button"
+             data-mdb-ripple-color="dark"><i class="fa fa-instagram fa-2x"></i></a>
+             <!-- Instagram -->
+
+          <!-- Linkedin -->
+          <a class="btn btn-link btn-floating btn-lg text-dark m-1"
+             href="https://www.linkedin.com/in/naveenkumar-j-610147174/" target="_blank"
+             role="button"
+             data-mdb-ripple-color="dark"><i class="fa fa-linkedin fa-2x"></i></a>
+            <!-- Linkedin -->
+
+          <!-- Github -->
+          <a class="btn btn-link btn-floating btn-lg text-dark m-1"
+             href="https://github.com/naveenkumar-j" target="_blank"
+             role="button"
+             data-mdb-ripple-color="dark"><i class="fa fa-github fa-2x"></i></a>
+             <!-- Github -->
+        </section>
+        <!-- Section: Social media -->
+  </div>
+  <!--End Copyright -->
+</footer>
+<!--End Footer -->
+</body>
+</html>
